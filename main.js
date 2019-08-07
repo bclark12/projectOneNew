@@ -40,19 +40,26 @@ let createBank = function () {
     };
 };
 createBank();
-//
-let addButtonFunction = function () {
-    //console.log(this.innerText);
 
+//This is where we control the flow. When i get home create div elements in the dom
+//  to represent correct letter choices.
+
+let addButtonFunction = function () {
+//"this" will refer to the button that was clicked in this function.
     for (i = 0; i < randomWordArray.length; i++) {
         if (this.innerText == randomWordArray[i]) {
+            this.innerText = 'X';
+            this.style.textDecoration = 'line-through';
+            this.style.color = 'red';
             return console.log('Match!')
         } 
     };
-    
+
     console.log('Wrong!')
     return this.innerText;
 };
+
+//
 
 for (i = 0; i < alphabet.length; i++) {
     document.getElementById('letter-' + i).addEventListener('click', addButtonFunction);
