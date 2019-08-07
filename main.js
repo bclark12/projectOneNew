@@ -39,5 +39,13 @@ let createBank = function () {
         alphabetLetters.innerText = alphabet[i];
     };
 };
-
 createBank();
+//
+let addButtonFunction = function () {
+    console.log("good job");
+}
+
+for (i = 0; i < alphabet.length; i++) {
+    document.getElementById('letter-' + i).addEventListener('click', addButtonFunction);
+};
+
