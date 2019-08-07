@@ -53,7 +53,6 @@ let createRightBoxes = function () {
 createRightBoxes();
 
 
-
 //This is where we control the flow. When i get home create div elements in the dom
 //  to represent correct letter choices.
 
@@ -75,7 +74,9 @@ let addButtonFunction = function () {
         return console.log('you done picked this letter already');
     }; 
 
-    console.log('Wrong!')
+    console.log('Wrong!');
+    this.innerText = '!';
+    this.style.color = 'purple';
     return this.innerText;
 };
 
