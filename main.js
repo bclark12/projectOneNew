@@ -1,6 +1,6 @@
 //create empty array to push individual letters tot hat array using CharCode and a "for loop"
 const alphabet = [];
-for (i = 65; i <= 90; i++) {
+for (i = 97; i <= 122; i++) {
     let arrayLetter = String.fromCharCode(i);
     alphabet.push(arrayLetter);
 }
@@ -42,10 +42,16 @@ let createBank = function () {
 createBank();
 //
 let addButtonFunction = function () {
-    console.log(this.innerText);
-    for (i = 0; i < randomWordArray.length; i++) {
+    //console.log(this.innerText);
 
+    for (i = 0; i < randomWordArray.length; i++) {
+        if (this.innerText == randomWordArray[i]) {
+            return console.log('Match!')
+        } 
     };
+    
+    console.log('Wrong!')
+    return this.innerText;
 };
 
 for (i = 0; i < alphabet.length; i++) {
