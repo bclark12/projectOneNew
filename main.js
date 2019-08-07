@@ -43,7 +43,10 @@ createBank();
 //
 let addButtonFunction = function () {
     console.log(this.innerText);
-}
+    for (i = 0; i < randomWordArray.length; i++) {
+
+    };
+};
 
 for (i = 0; i < alphabet.length; i++) {
     document.getElementById('letter-' + i).addEventListener('click', addButtonFunction);
