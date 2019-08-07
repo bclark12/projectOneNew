@@ -41,6 +41,19 @@ let createBank = function () {
 };
 createBank();
 
+let createRightBoxes = function () {
+    for (i = 0; i < randomWordArray.length; i++) {    
+        let rightBoxes = document.createElement('div');
+        let rightContainer = document.getElementById('rightContainer');
+        rightContainer.appendChild(rightBoxes);
+        rightBoxes.id = 'right' + i;
+        rightBoxes.className = 'right';
+    }
+};
+createRightBoxes();
+
+
+
 //This is where we control the flow. When i get home create div elements in the dom
 //  to represent correct letter choices.
 
@@ -65,6 +78,7 @@ let addButtonFunction = function () {
     console.log('Wrong!')
     return this.innerText;
 };
+
 
 //
 
