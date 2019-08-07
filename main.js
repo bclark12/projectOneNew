@@ -44,16 +44,23 @@ createBank();
 //This is where we control the flow. When i get home create div elements in the dom
 //  to represent correct letter choices.
 
-let addButtonFunction = function () {
 //"this" will refer to the button that was clicked in this function.
+let addButtonFunction = function () {       
     for (i = 0; i < randomWordArray.length; i++) {
         if (this.innerText == randomWordArray[i]) {
-            this.innerText = 'X';
-            this.style.textDecoration = 'line-through';
-            this.style.color = 'red';
+            this.innerText = '!';
+            //this.style.textDecoration = 'line-through';
+            this.style.color = 'purple';
+            
             return console.log('Match!')
-        } 
+        }
+        
     };
+    //console.log(this.innerText)
+    if (this.innerText === '!') {
+        alert('you done picked this letter already')
+        return console.log('you done picked this letter already');
+    }; 
 
     console.log('Wrong!')
     return this.innerText;
