@@ -42,7 +42,7 @@ let createBank = function () {
 createBank();
 //
 let addButtonFunction = function () {
-    console.log("good job");
+    console.log(this.innerText);
 }
 
 for (i = 0; i < alphabet.length; i++) {

@@ -34,7 +34,11 @@ h1 {
     width: 15px;
     border-bottom: 2px white solid;
     margin: 0px 3px 3px 3px;
-    padding: 0px 0 12px 5px;
+    padding: 0px 0 12px 5px;    
+}
+.letters:hover {
+    background-color: red;
+    cursor: default;
 }
 
 
