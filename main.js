@@ -4,6 +4,7 @@ for (i = 97; i <= 122; i++) {
     let arrayLetter = String.fromCharCode(i);
     alphabet.push(arrayLetter);
 }
+let wrongLettersArray = [];
 
 //this is where the different words for the game can be entered
 let wordsArray = ['movie', 'heyguys', 'anotherword', 'lastone', 'jkonemore'];
@@ -97,13 +98,16 @@ let checkWin = function () {
     };
     alert('Good job! You Win!');
     console.log('good job');
-        //for (i = 0; i < randomWordArray.length; i++) {
-
-        //else {
-        //    alert('you win!');
-        //    console.log(String.valueOf(rightBoxes));
-        //
-    };
+};
+let checkLose = function () {
+    let lastWrongBox = document.getElementById('wrong-5');
+    if (lastWrongBox.innerText == true) {
+        console.log('You Lose!');
+    }
+    else {
+        console.log('almost done')
+    }
+}
 //};
 //console.log(String.valueOf('h'))
 
@@ -120,4 +124,7 @@ for (i = 0; i < alphabet.length; i++) {
 };
 for (i = 0; i < alphabet.length; i++) {
     document.getElementById('letter-' + i).addEventListener('click', checkWin);
+};
+for (i = 0; i < alphabet.length; i++) {
+    document.getElementById('letter-' + i).addEventListener('click', checkLose);
 };
