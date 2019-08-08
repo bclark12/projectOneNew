@@ -95,8 +95,8 @@ let checkWin = function () {
             return    
         };
     };
-    alert('good job!')
-    console.log('good job')
+    alert('Good job! You Win!');
+    console.log('good job');
         //for (i = 0; i < randomWordArray.length; i++) {
 
         //else {
