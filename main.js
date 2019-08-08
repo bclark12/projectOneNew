@@ -79,24 +79,18 @@ let addButtonFunction = function () {
         return console.log('you done picked this letter already');
     }; 
     //console.log('Wrong!');
+    if (this.innerText !== 'X') {
+
     wrongLettersArray.push(this.innerText);
     wrongIdNumber = (wrongLettersArray.length - 1);
-    document.getElementById('wrong-' + (wrongIdNumber))
-    let wrongLetters = document.getElementById('wrongLetters');
-    
-    let wrongAnswer = this.innerText;
-    wrongLetters.
-
-  
-    console.log(wrongAnswer)
-    
-    
-    this.innerText = 'X';
+    currentWrongDiv = document.getElementById('wrong-' + (wrongIdNumber));
+    currentWrongDiv.innerText = this.innerText;       
     this.style.color = 'purple';
-    //if (this.innerText === 'X') {
-    return console.log('wrong');
-    //}    
-    //return this.innerText;
+    console.log('wrong'); 
+    return this.innerText = 'X';
+    };
+    alert('you done picked this letter already');
+    return console.log('you done picked this letter already');       
 };
 
 let checkWin = function () {
