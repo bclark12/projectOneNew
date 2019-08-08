@@ -89,17 +89,28 @@ let addButtonFunction = function () {
 let checkWin = function () {
     for (i = 0; i < randomWordArray.length; i++) {
         let rightBoxes = document.getElementById('right-' + i);
-
-        if (rightBoxes.nodeValue === null) {
-           return
-        }
-        else {
-            alert('you win!')
-        }
+        //console.log(rightBoxes)
+        if (rightBoxes.innerText == false) {
+            console.log('button is linked');
+            return    
+        };
     };
-};
+    alert('good job!')
+    console.log('good job')
+        //for (i = 0; i < randomWordArray.length; i++) {
 
-console.log(document.getElementById('right-1').nodeValue)
+        //else {
+        //    alert('you win!');
+        //    console.log(String.valueOf(rightBoxes));
+        //
+    };
+//};
+//console.log(String.valueOf('h'))
+
+//let x = document.getElementById('right-1');
+
+//console.log(x.valueOf())
+
 
 
 //
