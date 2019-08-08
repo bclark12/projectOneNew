@@ -106,8 +106,7 @@ let checkWin = function () {
             if (rightBoxes.innerText == false) {
                 console.log('button is linked');
                 return    
-        };
-    
+        };    
     };
     if (this.innerText !== 'Z') {
         let winningImage = document.getElementById('mainImage');
@@ -118,6 +117,7 @@ let checkWin = function () {
             letters.style.background = 'white';
             letters.innerText = 'Z';
         };
+        //////If you can reload css.... put it here
         document.getElementById('letterBank').style.background = 'white';
         document.getElementById('opener').style.marginLeft = '120px';
         document.getElementById('mainImage').style.marginRight = '195px';
@@ -128,11 +128,16 @@ let checkWin = function () {
     console.log('stop messing with stuff and play a new game');
 };
 
+console.log(document.getElementById('letter-0').innerText)
 let checkLose = function () {
     if (wrongLettersArray.length === 6) {
-        console.log('you lose')
-        return alert('you lose')
-    };    
+        for (i = 0; i < alphabet.length; i++) {
+            letters = document.getElementById('letter-' + i);
+            letters.innerText = alphabet[i];
+        };
+    console.log('you lose');
+    return alert('you lose')    
+    };
 };
  
 

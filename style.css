@@ -42,13 +42,13 @@ h1 {
 }
 
 
-#mainImage {
+img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 60%;
     
-  }
+}
 
 p {
     width: 400px;
