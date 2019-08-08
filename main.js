@@ -79,6 +79,17 @@ let addButtonFunction = function () {
         return console.log('you done picked this letter already');
     }; 
     //console.log('Wrong!');
+    wrongLettersArray.push(this.innerText);
+    index = (wrongLettersArray.length - 1);
+    let wrongLetters = document.getElementById('wrongLetters');
+    
+    let wrongAnswer = this.innerText;
+    wrongLetters.
+
+  
+    console.log(wrongAnswer)
+    
+    
     this.innerText = 'X';
     this.style.color = 'purple';
     //if (this.innerText === 'X') {
