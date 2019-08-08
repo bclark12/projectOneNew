@@ -46,7 +46,7 @@ let createRightBoxes = function () {
         let rightBoxes = document.createElement('div');
         let rightContainer = document.getElementById('rightContainer');
         rightContainer.appendChild(rightBoxes);
-        rightBoxes.id = 'right' + i;
+        rightBoxes.id = 'right-' + i;
         rightBoxes.className = 'right';
     }
 };
@@ -60,25 +60,46 @@ createRightBoxes();
 let addButtonFunction = function () {       
     for (i = 0; i < randomWordArray.length; i++) {
         if (this.innerText == randomWordArray[i]) {
+            let correctDiv = document.getElementById('right-' + i);
+            correctDiv.innerText = randomWordArray[i];           
+        }       
+    };
+    for (i = 0; i < randomWordArray.length; i++) {
+        if (this.innerText == randomWordArray[i]) {
             this.innerText = '!';
             //this.style.textDecoration = 'line-through';
-            this.style.color = 'purple';
-            
-            return console.log('Match!')
-        }
-        
-    };
-    //console.log(this.innerText)
+            this.style.color = 'purple';            
+            return console.log('Match!');
+        };
+    };                       
+    
     if (this.innerText === '!') {
         alert('you done picked this letter already')
         return console.log('you done picked this letter already');
     }; 
-
-    console.log('Wrong!');
-    this.innerText = '!';
+    //console.log('Wrong!');
+    this.innerText = 'X';
     this.style.color = 'purple';
-    return this.innerText;
+    //if (this.innerText === 'X') {
+    return console.log('wrong');
+    //}    
+    //return this.innerText;
 };
+
+let checkWin = function () {
+    for (i = 0; i < randomWordArray.length; i++) {
+        let rightBoxes = document.getElementById('right-' + i);
+
+        if (rightBoxes.nodeValue === null) {
+           return
+        }
+        else {
+            alert('you win!')
+        }
+    };
+};
+
+console.log(document.getElementById('right-1').nodeValue)
 
 
 //
@@ -86,4 +107,6 @@ let addButtonFunction = function () {
 for (i = 0; i < alphabet.length; i++) {
     document.getElementById('letter-' + i).addEventListener('click', addButtonFunction);
 };
-
+for (i = 0; i < alphabet.length; i++) {
+    document.getElementById('letter-' + i).addEventListener('click', checkWin);
+};
