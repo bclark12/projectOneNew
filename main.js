@@ -7,7 +7,7 @@ for (i = 97; i <= 122; i++) {
 let wrongLettersArray = [];
 
 //this is where the different words for the game can be entered
-let wordsArray = ['movie', 'heyguys', 'anotherword', 'lastone', 'jkonemore'];
+let wordsArray = ['movie', 'heyguys', 'another', 'lastone', 'jkone', 'hat', 'cool', 'nerd'];
 
 //divide the words into more managable pieces
 let lettersArray = [];
@@ -100,12 +100,12 @@ let addButtonFunction = function () {
 
 
 let checkWin = function () {
-        for (i = 0; i < randomWordArray.length; i++) {
-            let rightBoxes = document.getElementById('right-' + i);
-            //console.log("checks for undefined: " + rightBoxes)
-            if (rightBoxes.innerText == false) {
-                console.log('button is linked');
-                return    
+    for (i = 0; i < randomWordArray.length; i++) {
+        let rightBoxes = document.getElementById('right-' + i);
+        //console.log("checks for undefined: " + rightBoxes)
+        if (rightBoxes.innerText == false) {
+            console.log('button is linked');
+            return    
         };    
     };
     if (this.innerText !== 'Z') {
@@ -119,8 +119,8 @@ let checkWin = function () {
         };
         //////If you can reload css.... put it here
         document.getElementById('letterBank').style.background = 'white';
-        document.getElementById('opener').style.marginLeft = '120px';
-        document.getElementById('mainImage').style.marginRight = '195px';
+        //document.getElementById('opener').style.marginLeft = '120px';
+        //document.getElementById('mainImage').style.marginRight = '195px';
         alert('Good job! You Win!');
         console.log('good job');
         console.log(this.innerText);
@@ -128,15 +128,17 @@ let checkWin = function () {
     console.log('stop messing with stuff and play a new game');
 };
 
-console.log(document.getElementById('letter-0').innerText)
+console.log(document.getElementById('letter-' + 1).innerText)
 let checkLose = function () {
     if (wrongLettersArray.length === 6) {
         for (i = 0; i < alphabet.length; i++) {
-            letters = document.getElementById('letter-' + i);
-            letters.innerText = alphabet[i];
+        (document.getElementById('letter-' + i).innerText) = alphabet[i];
+        document.getElementById('letter-' + i).style.color = 'white'
+            //letters.innerText = alphabet[i];
+            console.log(document.getElementById('letter-' + i).innerHTML)
         };
-    console.log('you lose');
-    return alert('you lose')    
+    //console.log('you lose');
+    //return alert('you lose')    
     };
 };
  
