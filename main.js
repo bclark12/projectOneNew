@@ -80,7 +80,8 @@ let addButtonFunction = function () {
     }; 
     //console.log('Wrong!');
     wrongLettersArray.push(this.innerText);
-    index = (wrongLettersArray.length - 1);
+    wrongIdNumber = (wrongLettersArray.length - 1);
+    document.getElementById('wrong-' + (wrongIdNumber))
     let wrongLetters = document.getElementById('wrongLetters');
     
     let wrongAnswer = this.innerText;
