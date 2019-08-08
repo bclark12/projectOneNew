@@ -79,42 +79,69 @@ let addButtonFunction = function () {
         return console.log('you done picked this letter already');
     }; 
     //console.log('Wrong!');
-    if (this.innerText !== 'X') {
-
+    if (this.innerText !== 'X' && this.innerText !== 'Z') {
+    //This is the area where we will grant the ability to change the image displayed    
     wrongLettersArray.push(this.innerText);
     wrongIdNumber = (wrongLettersArray.length - 1);
     currentWrongDiv = document.getElementById('wrong-' + (wrongIdNumber));
     currentWrongDiv.innerText = this.innerText;       
     this.style.color = 'purple';
-    console.log('wrong'); 
+    console.log('wrong');
+
     return this.innerText = 'X';
+    };
+    
+    if (this.innerText == 'Z') {
+        return
     };
     alert('you done picked this letter already');
     return console.log('you done picked this letter already');       
 };
 
+
 let checkWin = function () {
-    for (i = 0; i < randomWordArray.length; i++) {
-        let rightBoxes = document.getElementById('right-' + i);
-        //console.log(rightBoxes)
-        if (rightBoxes.innerText == false) {
-            console.log('button is linked');
-            return    
+        for (i = 0; i < randomWordArray.length; i++) {
+            let rightBoxes = document.getElementById('right-' + i);
+            //console.log("checks for undefined: " + rightBoxes)
+            if (rightBoxes.innerText == false) {
+                console.log('button is linked');
+                return    
         };
+    
     };
-    alert('Good job! You Win!');
-    console.log('good job');
+    if (this.innerText !== 'Z') {
+        let winningImage = document.getElementById('mainImage');
+        winningImage.src = "https://atgbcentral.com/data/out/83/4656995-cool-background-pictures.jpg";
+        for (i = 0; i < alphabet.length; i++) {    
+            let letters = document.getElementById('letter-' + i);
+            letters.style.color = 'white';
+            letters.style.background = 'white';
+            letters.innerText = 'Z';
+        };
+        document.getElementById('letterBank').style.background = 'white';
+        document.getElementById('opener').style.marginLeft = '120px';
+        document.getElementById('mainImage').style.marginRight = '195px';
+        alert('Good job! You Win!');
+        console.log('good job');
+        console.log(this.innerText);
+    };
+    console.log('stop messing with stuff and play a new game');
 };
+
 let checkLose = function () {
-    let lastWrongBox = document.getElementById('wrong-5');
-    if (lastWrongBox.innerText == true) {
-        console.log('You Lose!');
-    }
-    else {
-        console.log('almost done')
-    }
-}
-//};
+    if (wrongLettersArray.length === 6) {
+        console.log('you lose')
+        return alert('you lose')
+    };    
+};
+ 
+
+    //else {
+     //   console.log('almost done');
+      //  console.log(lastWrongBox.innerText);
+    //
+
+
 //console.log(String.valueOf('h'))
 
 //let x = document.getElementById('right-1');
@@ -129,8 +156,9 @@ for (i = 0; i < alphabet.length; i++) {
     document.getElementById('letter-' + i).addEventListener('click', addButtonFunction);
 };
 for (i = 0; i < alphabet.length; i++) {
-    document.getElementById('letter-' + i).addEventListener('click', checkWin);
-};
-for (i = 0; i < alphabet.length; i++) {
     document.getElementById('letter-' + i).addEventListener('click', checkLose);
 };
+for (i = 0; i < alphabet.length; i++) {
+    document.getElementById('letter-' + i).addEventListener('click', checkWin);
+};
+
