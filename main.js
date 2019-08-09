@@ -115,6 +115,12 @@ let checkWin = function () {
         return console.log('stop messing with stuff and play a new game')
     }
     if (this.innerText !== 'Z') {
+        let scoreboard = document.getElementById('scoreboard')
+        let scoreboardText = scoreboard.innerText;
+        let scoreboardValue = parseFloat(scoreboardText);
+        console.log(scoreboardValue);
+        scoreboard.innerHTML = scoreboardValue + 1;
+        console.log(scoreboard.innerHTML);
         let winningImage = document.getElementById('mainImage');
         winningImage.src = "https://atgbcentral.com/data/out/83/4656995-cool-background-pictures.jpg";
         for (i = 0; i < alphabet.length; i++) {    
@@ -196,6 +202,7 @@ let getNewRandomWord = function () {
         let wrongDiv = document.getElementById('wrong-' + i);
         wrongDiv.innerText = null;
     };
+    document.getElementById('letterBank').style.background = 'purple';
     randomWordArray = lettersArray[getRandomWordIndex()]
     createRightBoxes();
     wrongLettersArray = [];

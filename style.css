@@ -40,11 +40,16 @@ h1 {
     background-color: red;
     cursor: default;
 }
+#opener {
+    display: flex;
+    flex-direction: column;
+
+}
 #imgContainer {
     width: 700px;
     height: 380px;
     background: white;
-    margin-top: 150px;
+    margin-top: 0px;
 
 }
 
@@ -60,9 +65,23 @@ img {
 p {
     width: 400px;
     text-align: center;
-    margin: 15px 150px 35px 150px;
+    margin: 15px 150px 0px 150px;
 }
+#explanation {
+    margin-bottom: 20px;
+}
+#scoreHeader {
+    font-size: 2em;
+    font-weight: bolder;
+}
+#scoreboard {
+    width: 700px;
+    height: 20px;
+    text-align: center;
+    margin-bottom: 150px;
+    font-size: 7em;
 
+}
 
 .wrong {
     height: 20px;
