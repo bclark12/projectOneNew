@@ -83,6 +83,8 @@ let addButtonFunction = function () {
     //This is the area where we will grant the ability to change the image displayed    
     wrongLettersArray.push(this.innerText);
     wrongIdNumber = (wrongLettersArray.length - 1);
+    losingImage = document.getElementById('mainImage')
+    losingImage.src = ("images/image-" + wrongIdNumber + ".png")
     currentWrongDiv = document.getElementById('wrong-' + (wrongIdNumber));
     currentWrongDiv.innerText = this.innerText;       
     this.style.color = 'purple';
@@ -108,6 +110,9 @@ let checkWin = function () {
             return    
         };    
     };
+    if (this.innerText == 'Z') {
+        return console.log('stop messing with stuff and play a new game')
+    }
     if (this.innerText !== 'Z') {
         let winningImage = document.getElementById('mainImage');
         winningImage.src = "https://atgbcentral.com/data/out/83/4656995-cool-background-pictures.jpg";
@@ -123,24 +128,41 @@ let checkWin = function () {
         //document.getElementById('mainImage').style.marginRight = '195px';
         alert('Good job! You Win!');
         console.log('good job');
-        console.log(this.innerText);
+        //console.log(this.innerText);
     };
-    console.log('stop messing with stuff and play a new game');
+    // if (this.innerText == 'Z') {
+    // console.log('stop messing with stuff and play a new game');
+    // };
 };
 
 console.log(document.getElementById('letter-' + 1).innerText)
 let checkLose = function () {
     if (wrongLettersArray.length === 6) {
-        for (i = 0; i < alphabet.length; i++) {
-        (document.getElementById('letter-' + i).innerText) = alphabet[i];
-        document.getElementById('letter-' + i).style.color = 'white'
-            //letters.innerText = alphabet[i];
-            console.log(document.getElementById('letter-' + i).innerHTML)
+        if (this.innerText == 'Z') {
+            console.log('stop messing with stuff and play a new game');
         };
+        for (i = 0; i < alphabet.length; i++) {    
+            let letters = document.getElementById('letter-' + i);
+            letters.style.color = 'white';
+            letters.style.background = 'white';
+            letters.innerText = 'Z';
+        };
+        document.getElementById('letterBank').style.background = 'white';
+                              
+        // if (this.innerText == 'Z') {
+        //     console.log('stop messing with stuff and play a new game');
+        // }
+        // for (i = 0; i < alphabet.length; i++) {
+        //     let letters = document.getElementById('letter-' + i)
+        //     letters.innerText = alphabet[i];
+        //     letters.style.color = 'white'
+            
+        //console.log(document.getElementById('letter-' + i).innerHTML)
+    };
     //console.log('you lose');
     //return alert('you lose')    
-    };
 };
+
  
 
     //else {
