@@ -7,7 +7,7 @@ for (i = 97; i <= 122; i++) {
 let wrongLettersArray = [];
 
 //this is where the different words for the game can be entered
-let wordsArray = ['movie', 'heyguys', 'another', 'lastone', 'jkone', 'hat', 'cool', 'nerd'];
+const wordsArray = ['movie', 'heyguys', 'another', 'lastone', 'jkone', 'hat', 'cool', 'nerd'];
 
 //divide the words into more managable pieces
 let lettersArray = [];
@@ -15,6 +15,7 @@ for (i = 0; i < wordsArray.length; i++) {
 splitStringArray = wordsArray[i].split('');
 lettersArray.push(splitStringArray);
 };
+console.log(lettersArray)
 
 //Now the "lettersArray" array is an array of arrays.
 //The individual arrays inside this multi-dimensional array contain
@@ -163,12 +164,47 @@ let resetGame = function () {
     for (i = 0; i < alphabet.length; i++) {
         let letters = document.getElementById('letter-' + i);
         letters.innerText = alphabet[i];
-        console.log(letters.innerText);
         letters.style.color = 'white';
         letters.style.background = 'purple';        
-    }
+    };
+    for (i = 0; i < randomWordArray.length; i++) {
+        let rightDiv = document.getElementById('right-' + i);
+        rightDiv.innerText = null;
+    };
+    for (i = 0; i < 6; i++) {
+        let wrongDiv = document.getElementById('wrong-' + i);
+        wrongDiv.innerText = null;
+    };
+    wrongLettersArray = []
+    startingImage = document.getElementById('mainImage');
+    startingImage.src = "https://img.buzzfeed.com/buzzfeed-static/static/2015-10/12/15/campaign_images/webdr01/23-pictures-only-pokemon-fans-will-think-are-funny-2-17684-1444678742-3_dblbig.jpg"
     document.getElementById('letterBank').style.background = 'purple';
-    console.log('function works');
+};
+let getNewRandomWord = function () {
+    //randomWordArray length is still the length of the current word until we change it on the next line
+    for (i = 0; i < randomWordArray.length; i++) {
+        let rightDiv = document.getElementById('right-' + i);
+        rightDiv.remove();
+    };
+    for (i = 0; i < alphabet.length; i++) {
+        let letters = document.getElementById('letter-' + i);
+        letters.innerText = alphabet[i];
+        letters.style.color = 'white';
+        letters.style.background = 'purple';        
+    };
+    for (i = 0; i < 6; i++) {
+        let wrongDiv = document.getElementById('wrong-' + i);
+        wrongDiv.innerText = null;
+    };
+    randomWordArray = lettersArray[getRandomWordIndex()]
+    createRightBoxes();
+    wrongLettersArray = [];
+    console.log(randomWordArray);
+    startingImage = document.getElementById('mainImage');
+    startingImage.src = "https://img.buzzfeed.com/buzzfeed-static/static/2015-10/12/15/campaign_images/webdr01/23-pictures-only-pokemon-fans-will-think-are-funny-2-17684-1444678742-3_dblbig.jpg";
+    //console.log(lettersArray[getRandomWordIndex()]);
+    //randomWordArray = lettersArray[getRandomWordIndex()];
+    //console.log('button works')
 };    
     
     // for (i = 0; i < alphabet.length; i++) {
@@ -206,4 +242,5 @@ for (i = 0; i < alphabet.length; i++) {
     document.getElementById('letter-' + i).addEventListener('click', checkWin);
 };
 
-document.getElementById('inputButton').addEventListener('click', resetGame);
+document.getElementById('resetButton').addEventListener('click', resetGame);
+document.getElementById('newWordButton').addEventListener('click', getNewRandomWord);
