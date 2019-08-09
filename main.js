@@ -84,7 +84,7 @@ let addButtonFunction = function () {
     wrongLettersArray.push(this.innerText);
     wrongIdNumber = (wrongLettersArray.length - 1);
     losingImage = document.getElementById('mainImage')
-    losingImage.src = ("images/image-" + wrongIdNumber + ".png")
+    losingImage.src = ("images/image-" + wrongIdNumber + ".jpeg");
     currentWrongDiv = document.getElementById('wrong-' + (wrongIdNumber));
     currentWrongDiv.innerText = this.innerText;       
     this.style.color = 'purple';
@@ -152,16 +152,31 @@ let checkLose = function () {
         // if (this.innerText == 'Z') {
         //     console.log('stop messing with stuff and play a new game');
         // }
-        // for (i = 0; i < alphabet.length; i++) {
-        //     let letters = document.getElementById('letter-' + i)
-        //     letters.innerText = alphabet[i];
-        //     letters.style.color = 'white'
+
             
         //console.log(document.getElementById('letter-' + i).innerHTML)
     };
     //console.log('you lose');
     //return alert('you lose')    
 };
+let resetGame = function () {
+    for (i = 0; i < alphabet.length; i++) {
+        let letters = document.getElementById('letter-' + i);
+        letters.innerText = alphabet[i];
+        console.log(letters.innerText);
+        letters.style.color = 'white';
+        letters.style.background = 'purple';        
+    }
+    document.getElementById('letterBank').style.background = 'purple';
+    console.log('function works');
+};    
+    
+    // for (i = 0; i < alphabet.length; i++) {
+    //     let letters = document.getElementById('letter-' + i);
+    //     letters.innerText = alphabet[i];
+    //     letters.style.color = 'white';
+    // }
+
 
  
 
@@ -191,3 +206,4 @@ for (i = 0; i < alphabet.length; i++) {
     document.getElementById('letter-' + i).addEventListener('click', checkWin);
 };
 
+document.getElementById('inputButton').addEventListener('click', resetGame);
